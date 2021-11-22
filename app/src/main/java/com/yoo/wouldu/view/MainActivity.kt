@@ -1,13 +1,11 @@
-package com.yoo.wouldu
+package com.yoo.wouldu.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.ActivityMainBinding
-import com.yoo.wouldu.view.ChatFragment
-import com.yoo.wouldu.view.HomeFragment
-import com.yoo.wouldu.view.MyFragment
 
 class MainActivity : AppCompatActivity() {
 

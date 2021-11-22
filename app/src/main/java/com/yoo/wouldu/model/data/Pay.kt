@@ -1,4 +1,4 @@
-package com.yoo.wouldu.model
+package com.yoo.wouldu.model.data
 
 /**
  * 사례없음 / 계좌이체 / 만나서 현금 / 기타 사례

@@ -1,8 +1,9 @@
-package com.yoo.wouldu.model
+package com.yoo.wouldu.model.data
 
 import java.util.*
 
 data class Request(
+    val id: String,
     var what: String,
     var how: How,
     var where: String,
