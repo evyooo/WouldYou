@@ -1,6 +1,6 @@
 package com.yoo.wouldu.model.data
 
-import java.util.*
+import java.time.LocalDateTime
 
 data class Request(
     val id: String,
@@ -8,7 +8,7 @@ data class Request(
     var how: How,
     var where: String,
     var whereDetail: String?,
-    var date: Date,
+    var date: LocalDateTime,
     var pay: Pay,
     var message: String?
 )
