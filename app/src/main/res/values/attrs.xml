@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CategoryButton">
+        <attr name="bg" format="integer"/>
+        <attr name="title" format="string"/>
+        <attr name="isSelected" format="boolean"/>
+    </declare-styleable>
+
+</resources>

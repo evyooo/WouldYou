@@ -31,6 +31,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requestViewModel.loadAll()
         setObserver()
         binding.viewModel = requestViewModel
 
@@ -39,10 +40,15 @@ class HomeFragment : Fragment() {
     }
 
     private fun setObserver() {
-        requestViewModel.itemList.observe(viewLifecycleOwner, Observer { items ->
-            items.let {
-                adapter.loadData(it)
-            }
+        requestViewModel.requestList.observe(viewLifecycleOwner, Observer {
+            adapter.loadData(it)
         })
+    }
+
+    private fun changeCategory() {
+        val categoryList = listOf(binding.allBtnMain, binding.doBtnMain, binding.buyBtnMain, binding.lendBtnMain)
+        categoryList.forEach {
+
+        }
     }
 }

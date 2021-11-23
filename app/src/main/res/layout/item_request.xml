@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="@{item.date.toString()}"
+            android:text="@{item.due.toString()}"
             app:layout_constraintBottom_toBottomOf="@+id/where_tv_item_request"
             app:layout_constraintStart_toEndOf="@+id/where_tv_item_request"
             app:layout_constraintTop_toTopOf="@+id/where_tv_item_request"
