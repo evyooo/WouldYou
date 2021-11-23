@@ -39,6 +39,10 @@ class RequestAdapter(private val viewModel: RequestViewModel) :
         holder.bind(viewModel, getItem(position))
     }
 
+    fun loadData(RequestList: List<Request>) {
+        submitList(RequestList)
+    }
+
 
     class RequestDiffCallback : DiffUtil.ItemCallback<Request>() {
         override fun areItemsTheSame(oldItem: Request, newItem: Request): Boolean {

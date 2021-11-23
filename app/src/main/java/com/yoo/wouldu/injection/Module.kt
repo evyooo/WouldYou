@@ -1,5 +1,6 @@
 package com.yoo.wouldu.injection
 
+import com.yoo.wouldu.model.RequestRepository
 import com.yoo.wouldu.viewmodel.RequestViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -10,5 +11,6 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     // Request
+    single { RequestRepository() }
     viewModel { RequestViewModel(get()) }
 }
