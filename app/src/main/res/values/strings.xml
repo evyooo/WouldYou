@@ -4,6 +4,9 @@
     <string name="menu_home">홈</string>
     <string name="menu_chat">채팅</string>
     <string name="menu_my">MY</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="category_all">전체</string>
+    <string name="category_do">해주세요</string>
+    <string name="category_buy">사다주세요</string>
+    <string name="category_lend">빌려주세요</string>
 </resources>
