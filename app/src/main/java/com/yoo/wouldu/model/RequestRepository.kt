@@ -1,12 +1,10 @@
 package com.yoo.wouldu.model
 
-import com.yoo.wouldu.model.data.How
-import com.yoo.wouldu.model.data.Pay
-import com.yoo.wouldu.model.data.Request
-import com.yoo.wouldu.model.data.Status
-import kotlinx.coroutines.flow.flowOf
+import com.yoo.wouldu.model.data.request.How
+import com.yoo.wouldu.model.data.request.Pay
+import com.yoo.wouldu.model.data.request.Request
+import com.yoo.wouldu.model.data.request.Status
 import java.time.LocalDateTime
-import java.util.*
 
 class RequestRepository {
     // 테스트용 더미

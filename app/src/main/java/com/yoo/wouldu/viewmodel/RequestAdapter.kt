@@ -3,7 +3,7 @@ package com.yoo.wouldu.viewmodel
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.yoo.wouldu.model.data.Request
+import com.yoo.wouldu.model.data.request.Request
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.yoo.wouldu.databinding.ItemRequestBinding

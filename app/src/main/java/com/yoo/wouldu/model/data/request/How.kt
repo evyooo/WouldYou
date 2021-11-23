@@ -1,4 +1,4 @@
-package com.yoo.wouldu.model.data
+package com.yoo.wouldu.model.data.request
 
 /**
  * 해주세요 / 사다주세요 / 빌려주세요

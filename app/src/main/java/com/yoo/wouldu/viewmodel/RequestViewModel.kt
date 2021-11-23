@@ -5,11 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.yoo.wouldu.Event
 import com.yoo.wouldu.model.RequestRepository
-import com.yoo.wouldu.model.data.How
-import com.yoo.wouldu.model.data.Request
+import com.yoo.wouldu.model.data.request.How
+import com.yoo.wouldu.model.data.request.Request
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 

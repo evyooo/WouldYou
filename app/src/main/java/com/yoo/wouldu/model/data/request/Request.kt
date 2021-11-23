@@ -1,7 +1,6 @@
-package com.yoo.wouldu.model.data
+package com.yoo.wouldu.model.data.request
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 import java.time.LocalDateTime
 
 /**
@@ -20,7 +19,7 @@ import java.time.LocalDateTime
  *     status: (enum) 구하는중 / 매칭됨 / 완료 / 만료
  */
 
-@Parcelize
+@kotlinx.parcelize.Parcelize
 data class Request(
     val id: String,
     var what: String,
