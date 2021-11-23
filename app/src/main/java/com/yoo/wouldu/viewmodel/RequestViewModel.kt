@@ -3,6 +3,7 @@ package com.yoo.wouldu.viewmodel
 import androidx.lifecycle.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.yoo.wouldu.Event
 import com.yoo.wouldu.model.RequestRepository
 import com.yoo.wouldu.model.data.How
 import com.yoo.wouldu.model.data.Request
@@ -17,6 +18,9 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
 
     private var _requestList = MutableLiveData<List<Request>>()
     val requestList: LiveData<List<Request>> = _requestList
+
+    private val _newTaskEvent = MutableLiveData<Event<Request>>()
+    val newTaskEvent: LiveData<Event<Request>> = _newTaskEvent
 
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -48,6 +52,10 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
                 _requestList.value = repository.dummy.filter { it.how == How.LEND }
             }
         }
+    }
+
+    fun addNewTask(request: Request) {
+        _newTaskEvent.value = Event(request)
     }
 
 }

@@ -1,5 +1,7 @@
 package com.yoo.wouldu.model.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.time.LocalDateTime
 
 /**
@@ -17,6 +19,8 @@ import java.time.LocalDateTime
  *     postDate: 작성일자
  *     status: (enum) 구하는중 / 매칭됨 / 완료 / 만료
  */
+
+@Parcelize
 data class Request(
     val id: String,
     var what: String,
@@ -30,4 +34,4 @@ data class Request(
     var writer: String,
     var postDate: LocalDateTime,
     var status: Status
-)
+): Parcelable
