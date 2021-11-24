@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WouldU">
         <activity
-            android:name=".view.RequestDetailActivity"
+            android:name=".view.ChatActivity"
             android:exported="true" />
         <activity
             android:name=".view.MainActivity"

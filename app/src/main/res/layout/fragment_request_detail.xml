@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.RequestDetailFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yoo.wouldu.viewmodel.RequestViewModel" />
+
+        <variable
+            name="request"
+            type="com.yoo.wouldu.model.data.request.Request" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+
+        <ImageView
+            android:id="@+id/back_iv_detail"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="19dp"
+            android:src="@drawable/ic_back"
+            android:onClick="@{()->viewModel.addNewTask()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_request_start"
+            app:layout_constraintBottom_toBottomOf="@+id/back_iv_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/back_iv_detail" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/writer_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:text="@{request.writer}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/writer_detail_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{request.writer}"
+                    app:layout_constraintStart_toStartOf="@+id/writer_tv_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/writer_tv_detail" />
+
+                <TextView
+                    android:id="@+id/status_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@{request.status.toString()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/writer_detail_tv_detail" />
+
+                <TextView
+                    android:id="@+id/what_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{request.what}"
+                    app:layout_constraintStart_toStartOf="@+id/status_tv_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/status_tv_detail" />
+
+                <TextView
+                    android:id="@+id/how_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{request.how.toString()}"
+                    app:layout_constraintStart_toStartOf="@+id/what_tv_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/what_tv_detail" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/shape_rad15_block"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/how_tv_detail">
+
+
+                    <TextView
+                        android:id="@+id/date_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@{request.due.toString()}"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                    <TextView
+                        android:id="@+id/time_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{request.due.toString()}"
+                        app:layout_constraintStart_toStartOf="@+id/date_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/date_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/fixed1_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_fixed_when"
+                        app:layout_constraintBottom_toBottomOf="@+id/time_tv_detail"
+                        app:layout_constraintStart_toEndOf="@+id/time_tv_detail"
+                        app:layout_constraintTop_toTopOf="@+id/time_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/where_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@{request.where}"
+                        app:layout_constraintStart_toStartOf="@+id/time_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/time_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/fixed2_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_fixed_where1"
+                        app:layout_constraintStart_toEndOf="@+id/where_tv_detail"
+                        app:layout_constraintTop_toTopOf="@+id/where_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/fixed3_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_fixed_where2"
+                        app:layout_constraintStart_toStartOf="@+id/where_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/where_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/fixed4_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/request_fixed_pay1"
+                        app:layout_constraintStart_toStartOf="@+id/fixed3_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed3_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/pay_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@{request.pay.toString()}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/fixed4_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed4_tv_detail" />
+
+                    <TextView
+                        android:id="@+id/fixed5_tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_fixed_pay2"
+                        app:layout_constraintBottom_toBottomOf="@+id/pay_tv_detail"
+                        app:layout_constraintStart_toEndOf="@+id/pay_tv_detail"
+                        app:layout_constraintTop_toBottomOf="@+id/fixed4_tv_detail" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/detail_tv_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/shape_rad15_block"
+                    android:padding="20dp"
+                    android:text="@{request.message}"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+                <TextView
+                    android:id="@+id/writtendate_tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@{request.postDate.toString()}"
+                    app:layout_constraintEnd_toEndOf="@+id/detail_tv_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_tv_detail" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/btn_request_start"
+                    android:onClick="@{()->viewModel.addNewTask(request)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/writtendate_tv_detail" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -46,9 +46,10 @@ class HomeFragment : Fragment() {
             adapter.loadData(it)
         })
         requestViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
-            val intent = Intent(context, RequestDetailActivity::class.java)
-            intent.putExtra("item", it)
-            startActivity(intent)
+//            val intent = Intent(context, RequestDetailActivity::class.java)
+//            intent.putExtra("item", it)
+//            startActivity(intent)
+            (activity as MainActivity).addFragment(RequestDetailFragment(it))
         })
     }
 

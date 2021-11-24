@@ -15,11 +15,20 @@ import kotlinx.coroutines.withContext
 class RequestViewModel(private val repository: RequestRepository) : ViewModel() {
     private val TAG = "RequestViewModel"
 
+    var _item = MutableLiveData<Request>()
+    val item : LiveData<Request> = _item
+
     private var _requestList = MutableLiveData<List<Request>>()
     val requestList: LiveData<List<Request>> = _requestList
 
     private val _newTaskEvent = MutableLiveData<Event<Request>>()
     val newTaskEvent: LiveData<Event<Request>> = _newTaskEvent
+
+    private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
+    val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
+
+    private val _startChatEvent = MutableLiveData<Event<Int>>()
+    val startChatEvent: LiveData<Event<Int>> = _startChatEvent
 
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -55,6 +64,10 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
 
     fun addNewTask(request: Request) {
         _newTaskEvent.value = Event(request)
+    }
+
+    fun addNewTask() {
+        _closeTaskEvent.postValue(Event(Unit))
     }
 
 }
