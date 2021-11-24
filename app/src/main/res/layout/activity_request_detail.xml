@@ -4,16 +4,153 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.RequestDetailActivity">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yoo.wouldu.viewmodel.RequestViewModel" />
+    </data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_iv_detail"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_menu_home" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_request_start"
+            app:layout_constraintBottom_toBottomOf="@+id/back_iv_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/back_iv_detail" />
+
+        <TextView
+            android:id="@+id/username_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="56dp"
+            android:text="@{viewModel.item.writer}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_iv_detail" />
+
+        <TextView
+            android:id="@+id/userdetail_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/username_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/username_tv_detail" />
+
+        <TextView
+            android:id="@+id/status_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.item.status.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/userdetail_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/userdetail_tv_detail" />
 
         <TextView
             android:id="@+id/what_tv_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@{viewModel.item.what}"
+            app:layout_constraintStart_toStartOf="@+id/status_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/status_tv_detail" />
+
+        <TextView
+            android:id="@+id/due_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:text="@{viewModel.item.due.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/userdetail_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/userdetail_tv_detail" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_fixed_when"
+            app:layout_constraintBottom_toBottomOf="@+id/due_tv_detail"
+            app:layout_constraintStart_toEndOf="@+id/due_tv_detail"
+            app:layout_constraintTop_toTopOf="@+id/due_tv_detail" />
+
+        <TextView
+            android:id="@+id/where_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@{viewModel.item.where}"
+            app:layout_constraintStart_toStartOf="@+id/due_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/due_tv_detail" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_fixed_where1"
+            app:layout_constraintBottom_toBottomOf="@+id/where_tv_detail"
+            app:layout_constraintStart_toEndOf="@+id/where_tv_detail"
+            app:layout_constraintTop_toTopOf="@+id/where_tv_detail" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_fixed_where2"
+            app:layout_constraintStart_toStartOf="@+id/where_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/where_tv_detail" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="@string/request_fixed_pay1"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/pay_tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.item.pay.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_fixed_pay2"
+            app:layout_constraintBottom_toBottomOf="@+id/pay_tv_detail"
+            app:layout_constraintStart_toEndOf="@+id/pay_tv_detail"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="28dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
