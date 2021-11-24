@@ -2,6 +2,7 @@ package com.yoo.wouldu.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,8 +41,8 @@ class RequestDetailFragment(var request: Request) : Fragment() {
     }
 
     private fun setObserver() {
-        requestViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
-            (activity as MainActivity).fragmentManager.popBackStack()
+        requestViewModel.closeTaskEvent.observe(viewLifecycleOwner, EventObserver {
+            (activity as MainActivity).onBackPressed()
         })
 //        requestViewModel.orderItem.observe(viewLifecycleOwner, EventObserver {
 //            val intent = Intent(context, DetailActivity::class.java)

@@ -24,6 +24,9 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     private val _newTaskEvent = MutableLiveData<Event<Request>>()
     val newTaskEvent: LiveData<Event<Request>> = _newTaskEvent
 
+    private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
+    val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
+
 //    private val _newTaskEvent = MutableLiveData<Event<Unit>>()
 //    val newTaskEvent: LiveData<Event<Unit>> = _newTaskEvent
 
@@ -63,9 +66,9 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         _newTaskEvent.value = Event(request)
     }
 
-//    fun close() {
-//
-//    }
+    fun addNewTask() {
+        _closeTaskEvent.postValue(Event(Unit))
+    }
 
 //    fun onBtnExitClick() {
 //        _newTaskEvent.postValue(Event(Unit))
