@@ -27,9 +27,6 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
     val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
-    private val _startChatEvent = MutableLiveData<Event<Int>>()
-    val startChatEvent: LiveData<Event<Int>> = _startChatEvent
-
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
