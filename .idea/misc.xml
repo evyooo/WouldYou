@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.4035675048828125" />
         <entry key="app/src/main/res/layout/fragment_my.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_request_detail.xml" value="0.6128161665322125" />
         <entry key="app/src/main/res/layout/item_chat_preview.xml" value="0.4024913536620599" />
         <entry key="app/src/main/res/layout/item_request.xml" value="0.375" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1" />

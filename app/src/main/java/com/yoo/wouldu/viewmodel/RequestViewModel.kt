@@ -63,6 +63,10 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         _newTaskEvent.value = Event(request)
     }
 
+//    fun close() {
+//
+//    }
+
 //    fun onBtnExitClick() {
 //        _newTaskEvent.postValue(Event(Unit))
 //    }
