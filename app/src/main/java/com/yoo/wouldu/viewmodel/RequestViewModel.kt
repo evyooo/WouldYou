@@ -1,5 +1,6 @@
 package com.yoo.wouldu.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -29,6 +30,9 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
 
     private val _startChatEvent = MutableLiveData<Event<Int>>()
     val startChatEvent: LiveData<Event<Int>> = _startChatEvent
+
+    private val _addRequestEvent = MutableLiveData<Event<How>>()
+    val addRequestEvent: LiveData<Event<How>> = _addRequestEvent
 
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -68,6 +72,15 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
 
     fun addNewTask() {
         _closeTaskEvent.postValue(Event(Unit))
+    }
+
+    fun addNewTask(int: Int) {
+        Log.d(TAG, "add")
+        when (int) {
+            0 -> _addRequestEvent.postValue(Event(How.DO))
+            1 -> _addRequestEvent.postValue(Event(How.BUY))
+            2 -> _addRequestEvent.postValue(Event(How.LEND))
+        }
     }
 
 }

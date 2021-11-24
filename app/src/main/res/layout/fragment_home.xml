@@ -37,9 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_left"
+                android:onClick="@{() -> viewModel.loadAll()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_all"
-                android:onClick="@{() -> viewModel.loadAll()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -48,9 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_middle"
+                android:onClick="@{() -> viewModel.loadDoCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_do"
-                android:onClick="@{() -> viewModel.loadDoCategory()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -59,9 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_middle"
+                android:onClick="@{() -> viewModel.loadBuyCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_buy"
-                android:onClick="@{() -> viewModel.loadBuyCategory()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -70,9 +70,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_right"
+                android:onClick="@{() -> viewModel.loadLendCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_lend"
-                android:onClick="@{() -> viewModel.loadLendCategory()}"
                 android:textSize="12dp" />
         </LinearLayout>
 
@@ -86,5 +86,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Button"
+            android:onClick="@{() -> viewModel.addNewTask(0)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

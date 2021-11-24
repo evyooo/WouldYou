@@ -2,6 +2,7 @@ package com.yoo.wouldu.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.lifecycle.Observer
 import com.yoo.wouldu.EventObserver
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.FragmentHomeBinding
+import com.yoo.wouldu.view.addrequest.AddRequestActivity
 import com.yoo.wouldu.viewmodel.RequestAdapter
 import com.yoo.wouldu.viewmodel.RequestViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -50,6 +52,12 @@ class HomeFragment : Fragment() {
 //            intent.putExtra("item", it)
 //            startActivity(intent)
             (activity as MainActivity).addFragment(RequestDetailFragment(it))
+        })
+        requestViewModel.addRequestEvent.observe(viewLifecycleOwner, EventObserver {
+            Log.d(TAG, "add")
+            val intent = Intent(context, AddRequestActivity::class.java)
+            intent.putExtra("how", it)
+            startActivity(intent)
         })
     }
 

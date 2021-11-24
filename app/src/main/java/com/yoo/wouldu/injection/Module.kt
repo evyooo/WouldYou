@@ -1,7 +1,9 @@
 package com.yoo.wouldu.injection
 
+import com.yoo.wouldu.model.AddRepository
 import com.yoo.wouldu.model.ChatRepository
 import com.yoo.wouldu.model.RequestRepository
+import com.yoo.wouldu.viewmodel.AddViewModel
 import com.yoo.wouldu.viewmodel.ChatViewModel
 import com.yoo.wouldu.viewmodel.RequestViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -16,6 +18,10 @@ val viewModelModule = module {
     // Request
     single { RequestRepository() }
     viewModel { RequestViewModel(get()) }
+
+    // add Request
+    single { AddRepository() }
+    viewModel { AddViewModel(get()) }
 
     // Chat
     single { ChatRepository() }
