@@ -9,4 +9,14 @@
     <string name="category_do">해주세요</string>
     <string name="category_buy">사다주세요</string>
     <string name="category_lend">빌려주세요</string>
+
+    <string name="header_request_start">부탁 요청</string>
+
+    <string name="request_fixed_when">까지</string>
+    <string name="request_fixed_where1">으로</string>
+    <string name="request_fixed_where2">부탁드려요</string>
+    <string name="request_fixed_pay1">사례는</string>
+    <string name="request_fixed_pay2">할게요</string>
+
+    <string name="btn_request_start">부탁 도와줄게요!</string>
 </resources>

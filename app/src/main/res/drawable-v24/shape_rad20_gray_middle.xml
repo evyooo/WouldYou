@@ -4,6 +4,6 @@
 
 
     <solid
-        android:color="@color/block"/>
+        android:color="@color/block06"/>
 
 </shape>
