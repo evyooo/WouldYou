@@ -19,6 +19,4 @@
     <string name="request_fixed_pay2">할게요</string>
 
     <string name="btn_request_start">부탁 도와줄게요!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

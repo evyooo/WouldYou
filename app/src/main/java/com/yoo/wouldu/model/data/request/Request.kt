@@ -15,6 +15,8 @@ import java.time.LocalDateTime
  *     payAmount: (nullable) 사례 금액
  *     message: (nullable) 할말
  *     writer: 작성자
+ *     writerDetail: 작성자 학번
+ *     writerSex: 작성자 성별
  *     postDate: 작성일자
  *     status: (enum) 구하는중 / 매칭됨 / 완료 / 만료
  */
@@ -31,6 +33,8 @@ data class Request(
     var payAmount: String?,
     var message: String?,
     var writer: String,
+    var writerDetail: String,
+    var writerSex: String,
     var postDate: LocalDateTime,
     var status: Status
 ): Parcelable
