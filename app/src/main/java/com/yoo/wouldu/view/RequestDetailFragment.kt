@@ -44,11 +44,12 @@ class RequestDetailFragment(var request: Request) : Fragment() {
         requestViewModel.closeTaskEvent.observe(viewLifecycleOwner, EventObserver {
             (activity as MainActivity).onBackPressed()
         })
-//        requestViewModel.orderItem.observe(viewLifecycleOwner, EventObserver {
-//            val intent = Intent(context, DetailActivity::class.java)
-//            intent.putExtra("item", it)
-//            startActivity(intent)
-//        })
+        requestViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("flag", "NEW")
+            intent.putExtra("request", it)
+            startActivity(intent)
+        })
     }
 
 }

@@ -27,8 +27,8 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
     val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
-//    private val _newTaskEvent = MutableLiveData<Event<Unit>>()
-//    val newTaskEvent: LiveData<Event<Unit>> = _newTaskEvent
+    private val _startChatEvent = MutableLiveData<Event<Int>>()
+    val startChatEvent: LiveData<Event<Int>> = _startChatEvent
 
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -69,9 +69,5 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     fun addNewTask() {
         _closeTaskEvent.postValue(Event(Unit))
     }
-
-//    fun onBtnExitClick() {
-//        _newTaskEvent.postValue(Event(Unit))
-//    }
 
 }
