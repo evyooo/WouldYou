@@ -271,17 +271,21 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button"
+                    style="@style/contentsBold04"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="24dp"
+                    android:background="@drawable/gradation"
+                    android:gravity="center_horizontal|center_vertical"
                     android:onClick="@{()->viewModel.addNewTask(request)}"
                     android:stateListAnimator="@null"
                     android:text="@string/btn_request_start"
+                    android:textColor="@color/white07"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
