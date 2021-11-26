@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yoo.wouldu.Event
 import com.yoo.wouldu.model.ChatRepository
+import com.yoo.wouldu.model.data.chat.Chat
 import com.yoo.wouldu.model.data.chat.ChatPreview
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,6 +19,9 @@ class ChatViewModel(private val repository: ChatRepository): ViewModel() {
     private var _previewList = MutableLiveData<List<ChatPreview>>()
     val previewList: LiveData<List<ChatPreview>> = _previewList
 
+    private var _chatList = MutableLiveData<List<Chat>>()
+    val chatList: LiveData<List<Chat>> = _chatList
+
     // TODO cid만 넘겨주기 (바뀔수도 있음)
     private val _newTaskEvent = MutableLiveData<Event<String>>()
     val newTaskEvent: LiveData<Event<String>> = _newTaskEvent
@@ -29,6 +33,14 @@ class ChatViewModel(private val repository: ChatRepository): ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 _previewList.value = repository.dummy
+            }
+        }
+    }
+
+    fun loadChat() {
+        CoroutineScope(Dispatchers.IO).launch {
+            withContext(Dispatchers.Main) {
+                _chatList.value = repository.dummyWhole
             }
         }
     }
