@@ -5,11 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ChatActivity">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yoo.wouldu.viewmodel.ChatViewModel" />
+
+        <variable
+            name="item"
+            type="com.yoo.wouldu.model.data.chat.ChatPreview" />
+    </data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
+        <ImageView
+            android:id="@+id/back_iv_chat"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:onClick="@{()-> }"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

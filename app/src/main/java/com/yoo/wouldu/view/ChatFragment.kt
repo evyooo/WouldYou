@@ -47,7 +47,10 @@ class ChatFragment : Fragment() {
             adapter.loadData(it)
         })
         chatViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
-
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("isNew", false)
+            intent.putExtra("cid", it)
+            startActivity(intent)
         })
     }
 }

@@ -46,7 +46,7 @@ class RequestDetailFragment(var request: Request) : Fragment() {
         })
         requestViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
             val intent = Intent(context, ChatActivity::class.java)
-            intent.putExtra("flag", "NEW")
+            intent.putExtra("isNew", true)
             intent.putExtra("request", it)
             startActivity(intent)
         })
