@@ -16,10 +16,14 @@
     <string name="request_fixed_when">까지</string>
     <string name="request_fixed_where1">(으)로</string>
     <string name="request_fixed_where2">부탁드려요</string>
+    <string name="request_fixed_where3">교내 건물</string>
+    <string name="request_fixed_where4">여기</string>
+
     <string name="request_fixed_pay1">사례는</string>
     <string name="request_fixed_pay2">할게요</string>
     <string name="request_fixed_pay3">로</string>
-
+    <string name="request_fixed_pay4">사례 금액은</string>
+    <string name="request_fixed_pay5">원</string>
 
     <string name="request_what">무엇</string>
     <string name="request_when">언제</string>
@@ -28,10 +32,20 @@
     <string name="request_message">추가로 하고싶은 말</string>
     <string name="request_message2">은</string>
 
+    <string name="pay_transfer">계좌이체</string>
+    <string name="pay_money">만나서 현금</string>
+    <string name="pay_gifticon">기프티콘</string>
+    <string name="pay_else">기타</string>
+    <string name="pay_none">사례 없음</string>
+
 
     <string name="btn_request_start">부탁 도와줄게요!</string>
     <string name="btn_add_request">부탁하기</string>
 
     <string name="hint_add_message">입력해주세요</string>
+    <string name="hint_what">무엇을(를)</string>
+    <string name="hint_where">건물을 선택해주세요</string>
+    <string name="hint_where_detail">위치에 대한 추가 정보를 입력해주세요</string>
+
 
 </resources>

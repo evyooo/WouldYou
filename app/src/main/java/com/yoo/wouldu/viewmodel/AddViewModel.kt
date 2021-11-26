@@ -10,10 +10,17 @@ import com.yoo.wouldu.model.data.request.Request
 class AddViewModel(private val repository: AddRepository) : ViewModel() {
     private val TAG = "AddViewModel"
 
-    private val _newTaskEvent = MutableLiveData<Event<Unit>>()
-    val newTaskEvent: LiveData<Event<Unit>> = _newTaskEvent
+    private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
+    val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
-    fun addNewTask() {
-        _newTaskEvent.postValue(Event(Unit))
+    private val _startTaskEvent = MutableLiveData<Int>()
+    val startTaskEvent: LiveData<Int> = _startTaskEvent
+
+    fun closeNewTask() {
+        _closeTaskEvent.postValue(Event(Unit))
+    }
+
+    fun startNewTask(int: Int) {
+        _startTaskEvent.value = int
     }
 }

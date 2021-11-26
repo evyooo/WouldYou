@@ -21,7 +21,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/ic_close"
-            android:onClick="@{() -> viewModel.addNewTask()}"
+            android:onClick="@{() -> viewModel.closeNewTask()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,9 @@
                     android:text="TextView" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/what_cl_add"
                     android:layout_width="match_parent"
+                    android:onClick="@{() -> viewModel.startNewTask(0)}"
                     android:layout_height="32dp"
                     android:layout_marginTop="48dp">
 
@@ -75,6 +77,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/due_cl_add"
+                    android:onClick="@{() -> viewModel.startNewTask(1)}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp">
@@ -112,6 +116,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/where_cl_add"
+                    android:onClick="@{() -> viewModel.startNewTask(2)}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp">
@@ -158,6 +164,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pay_cl_add"
+                    android:onClick="@{() -> viewModel.startNewTask(3)}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp">
