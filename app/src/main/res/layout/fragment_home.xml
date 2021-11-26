@@ -21,15 +21,15 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="67dp"
+            android:layout_marginEnd="24dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/imageView5">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/all_btn_main"
@@ -37,9 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_left"
+                android:onClick="@{() -> viewModel.loadAll()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_all"
-                android:onClick="@{() -> viewModel.loadAll()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -48,9 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_middle"
+                android:onClick="@{() -> viewModel.loadDoCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_do"
-                android:onClick="@{() -> viewModel.loadDoCategory()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -59,9 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_middle"
+                android:onClick="@{() -> viewModel.loadBuyCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_buy"
-                android:onClick="@{() -> viewModel.loadBuyCategory()}"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -70,9 +70,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/shape_rad20_gray_right"
+                android:onClick="@{() -> viewModel.loadLendCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_lend"
-                android:onClick="@{() -> viewModel.loadLendCategory()}"
                 android:textSize="12dp" />
         </LinearLayout>
 
@@ -86,5 +86,33 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
+            app:srcCompat="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/imageView7"
+            app:srcCompat="@drawable/ic_filtering" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_alarm" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
