@@ -32,7 +32,7 @@ class AddViewModel(private val repository: AddRepository) : ViewModel() {
     val startTaskEvent: LiveData<Int> = _startTaskEvent
 
     init {
-        _what.postValue("")
+        _what.postValue("무엇")
         _whatCount.postValue(0)
 
         _message.postValue("")

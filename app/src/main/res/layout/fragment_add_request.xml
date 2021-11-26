@@ -56,12 +56,12 @@
                     android:layout_marginTop="48dp">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/what_tv_add"
                         style="@style/titleBold02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:text="@string/request_what"
+                        android:text="@{viewModel.what}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -72,9 +72,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/request_fixed_what"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView"
-                        app:layout_constraintStart_toEndOf="@+id/textView"
-                        app:layout_constraintTop_toTopOf="@+id/textView" />
+                        app:layout_constraintBottom_toBottomOf="@+id/what_tv_add"
+                        app:layout_constraintStart_toEndOf="@+id/what_tv_add"
+                        app:layout_constraintTop_toTopOf="@+id/what_tv_add" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
