@@ -19,4 +19,6 @@
     <string name="request_fixed_pay2">할게요</string>
 
     <string name="btn_request_start">부탁 도와줄게요!</string>
+    <string name="btn_send">전송</string>
+
 </resources>

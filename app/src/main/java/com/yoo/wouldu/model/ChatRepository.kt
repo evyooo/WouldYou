@@ -1,5 +1,6 @@
 package com.yoo.wouldu.model
 
+import com.yoo.wouldu.model.data.chat.Chat
 import com.yoo.wouldu.model.data.chat.ChatPreview
 import java.time.LocalDateTime
 
@@ -17,5 +18,14 @@ class ChatRepository {
             ChatPreview("", "닉네임3", "네네 괜찮아요!! 감사합니다.", LocalDateTime.of(2021, 3, 1, 12, 30), "0"),
             ChatPreview("", "닉네임4", "네네 괜찮아요!! 감사합니다.", LocalDateTime.of(2021, 3, 1, 12, 30), "0"),
             ChatPreview("", "닉네임5", "네네 괜찮아요!! 감사합니다.", LocalDateTime.of(2021, 3, 1, 12, 30), "0")
+        )
+
+    val dummyWhole =
+        listOf(
+            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "이니마니모", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "이니마니모", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "이니마니모", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "이니마니모", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 16, 31), false, "이니마니모", null)
         )
 }

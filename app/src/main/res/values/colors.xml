@@ -4,6 +4,11 @@
     <color name="sub01">#FF5F5F</color>
     <color name="sub02">#4F60FF</color>
     <color name="sub03">#FFD951</color>
+    <color name="sub01_light">#FFF2F2</color>
+    <color name="sub02_light">#F1F2FF</color>
+    <color name="sub03_light">#FFFCF1</color>
+    <color name="sub04_light">#F2EFFB</color>
+    <color name="sub05_light">#F8F8F8</color>
 
     <color name="black01">#FF000000</color>
     <color name="caption02">#565656</color>
