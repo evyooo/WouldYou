@@ -49,11 +49,15 @@
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/save_btn_when"
+            android:id="@+id/confirm_btn_when"
+            style="@style/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="36dp"
+            android:background="@drawable/shape_btn_deactivate"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

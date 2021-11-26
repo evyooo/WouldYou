@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/what_et_what"
             style="@style/titleBold02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/count_tv_what"
             style="@style/contentsReg07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,12 +56,15 @@
             app:layout_constraintTop_toBottomOf="@+id/view2" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3"
+            android:id="@+id/confirm_btn_what"
+            style="@style/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="36dp"
-            android:text="Button"
+            android:background="@drawable/shape_btn_deactivate"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -70,9 +73,9 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/dividingLine05"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintEnd_toEndOf="@+id/what_et_what"
+            app:layout_constraintStart_toStartOf="@+id/what_et_what"
+            app:layout_constraintTop_toBottomOf="@+id/what_et_what" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

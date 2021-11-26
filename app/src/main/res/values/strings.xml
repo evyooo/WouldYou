@@ -41,6 +41,7 @@
 
     <string name="btn_request_start">부탁 도와줄게요!</string>
     <string name="btn_add_request">부탁하기</string>
+    <string name="btn_confirm">확인</string>
 
     <string name="hint_add_message">입력해주세요</string>
     <string name="hint_what">무엇을(를)</string>
