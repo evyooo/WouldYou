@@ -10,6 +10,9 @@ import com.yoo.wouldu.model.data.request.Request
 class AddViewModel(private val repository: AddRepository) : ViewModel() {
     private val TAG = "AddViewModel"
 
+    private val _keyboardDownEvent = MutableLiveData<Event<Unit>>()
+    val keyboardDownEvent: LiveData<Event<Unit>> = _keyboardDownEvent
+
     private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
     val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
@@ -22,5 +25,9 @@ class AddViewModel(private val repository: AddRepository) : ViewModel() {
 
     fun startNewTask(int: Int) {
         _startTaskEvent.value = int
+    }
+
+    fun keyboardDown() {
+        _keyboardDownEvent.postValue(Event(Unit))
     }
 }

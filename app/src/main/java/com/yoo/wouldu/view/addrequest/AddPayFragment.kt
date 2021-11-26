@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.FragmentAddPayBinding
 import com.yoo.wouldu.databinding.FragmentAddWhenBinding
+import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.viewmodel.AddViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -38,6 +39,9 @@ class AddPayFragment : Fragment() {
     private fun setObserver() {
         addViewModel.closeTaskEvent.observe(viewLifecycleOwner, Observer {
             (activity as AddRequestActivity).onBackPressed()
+        })
+        addViewModel.keyboardDownEvent.observe(viewLifecycleOwner, Observer {
+            KeyBoard().hideSoftKeyboard(requireContext(), binding.amountEtPay)
         })
     }
 

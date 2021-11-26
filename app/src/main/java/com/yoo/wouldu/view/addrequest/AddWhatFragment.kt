@@ -13,6 +13,7 @@ import com.yoo.wouldu.EventObserver
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.FragmentAddRequestBinding
 import com.yoo.wouldu.databinding.FragmentAddWhatBinding
+import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.view.MainActivity
 import com.yoo.wouldu.view.RequestDetailFragment
 import com.yoo.wouldu.viewmodel.AddViewModel
@@ -42,6 +43,9 @@ class AddWhatFragment : Fragment() {
     private fun setObserver() {
         addViewModel.closeTaskEvent.observe(viewLifecycleOwner, Observer {
             (activity as AddRequestActivity).onBackPressed()
+        })
+        addViewModel.keyboardDownEvent.observe(viewLifecycleOwner, Observer {
+            KeyBoard().hideSoftKeyboard(requireContext(), binding.whatEtWhat)
         })
     }
 

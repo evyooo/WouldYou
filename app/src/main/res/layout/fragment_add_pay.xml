@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:onClick="@{() -> viewModel.keyboardDown()}">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -147,7 +148,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button9" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/amount_et_pay"
             style="@style/titleBold02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -171,7 +172,7 @@
             android:background="@color/dividingLine05"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView30"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintTop_toBottomOf="@+id/amount_et_pay" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"

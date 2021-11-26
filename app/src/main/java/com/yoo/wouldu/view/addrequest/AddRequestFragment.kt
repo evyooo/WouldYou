@@ -14,6 +14,7 @@ import com.yoo.wouldu.EventObserver
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.FragmentAddRequestBinding
 import com.yoo.wouldu.databinding.FragmentHomeBinding
+import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.view.MainActivity
 import com.yoo.wouldu.view.RequestDetailFragment
 import com.yoo.wouldu.viewmodel.AddViewModel
@@ -58,5 +59,8 @@ class AddRequestFragment : Fragment() {
                 "3" -> (activity as AddRequestActivity).addFragment(AddPayFragment())
             }
         }
+        addViewModel.keyboardDownEvent.observe(viewLifecycleOwner, Observer {
+            KeyBoard().hideSoftKeyboard(requireContext(), binding.messageEtAdd)
+        })
     }
 }
