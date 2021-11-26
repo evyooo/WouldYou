@@ -261,6 +261,8 @@
                     android:background="@android:color/transparent"
                     android:ems="10"
                     android:hint="@string/hint_add_message"
+                    android:maxLength="100"
+                    android:onTextChanged="@{viewModel::onMessageTextChanged}"
                     android:inputType="textMultiLine"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp" />
@@ -274,14 +276,14 @@
                     android:background="@color/dividingLine05" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/count_tv_add"
                     style="@style/contentsReg07"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
-                    android:text="TextView"
+                    app:count_100="@{viewModel.messageCount}"
                     android:textColor="@color/deactive04" />
 
                 <androidx.appcompat.widget.AppCompatButton

@@ -5,9 +5,8 @@
     tools:context=".view.addrequest.AddWhatFragment">
 
     <data>
-        <variable
-            name="viewModel"
-            type="com.yoo.wouldu.viewmodel.AddViewModel" />
+        <variable name="viewModel" type="com.yoo.wouldu.viewmodel.AddViewModel" />
+        <variable name="textWatcher" type="android.text.TextWatcher"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,6 +37,8 @@
             android:ems="10"
             android:hint="@string/hint_what"
             android:inputType="textMultiLine"
+            android:maxLength="30"
+            android:onTextChanged="@{viewModel::onWhatTextChanged}"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            app:count_30="@{viewModel.whatCount}"
             android:textColor="@color/caption02"
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
