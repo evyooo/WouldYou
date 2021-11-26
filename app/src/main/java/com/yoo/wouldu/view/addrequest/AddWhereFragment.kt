@@ -24,7 +24,6 @@ class AddWhereFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_where, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root

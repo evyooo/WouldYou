@@ -17,162 +17,184 @@
         android:background="@android:color/white"
         android:onClick="@{() -> viewModel.keyboardDown()}">
 
+
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="24dp"
-            android:src="@drawable/ic_close"
             android:onClick="@{() -> viewModel.closeNewTask()}"
+            android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView28"
-            style="@style/titleReg03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="104dp"
-            android:text="@string/request_fixed_pay1"
-            android:textColor="@color/placeHolder03"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView29"
-            style="@style/titleBold02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:text="@string/request_pay"
-            android:textColor="@color/placeHolder03"
-            app:layout_constraintBottom_toBottomOf="@+id/textView28"
-            app:layout_constraintStart_toEndOf="@+id/textView28"
-            app:layout_constraintTop_toTopOf="@+id/textView28" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp"
+                android:onClick="@{() -> viewModel.keyboardDown()}">
 
-        <View
-            android:id="@+id/view5"
-            android:layout_width="12dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                <TextView
+                    android:id="@+id/textView28"
+                    style="@style/titleReg03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:text="@string/request_fixed_pay1"
+                    android:textColor="@color/placeHolder03"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button5"
-            style="@style/contentsReg05"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/shape_select_deactivate"
-            android:gravity="center_horizontal|center_vertical"
-            android:stateListAnimator="@null"
-            android:text="@string/pay_transfer"
-            android:textColor="@color/deactive04"
-            app:layout_constraintEnd_toStartOf="@+id/view5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/view5" />
+                <TextView
+                    android:id="@+id/textView29"
+                    style="@style/titleBold02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/request_pay"
+                    android:textColor="@color/placeHolder03"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                    app:layout_constraintStart_toEndOf="@+id/textView28"
+                    app:layout_constraintTop_toTopOf="@+id/textView28" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button6"
-            style="@style/contentsReg05"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:background="@drawable/shape_select_deactivate"
-            android:gravity="center_horizontal|center_vertical"
-            android:stateListAnimator="@null"
-            android:text="@string/pay_money"
-            android:textColor="@color/deactive04"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/view5"
-            app:layout_constraintTop_toTopOf="@+id/view5" />
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="12dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button7"
-            style="@style/contentsReg05"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/shape_select_deactivate"
-            android:gravity="center_horizontal|center_vertical"
-            android:stateListAnimator="@null"
-            android:text="@string/pay_gifticon"
-            android:textColor="@color/deactive04"
-            app:layout_constraintEnd_toStartOf="@+id/view5"
-            app:layout_constraintStart_toStartOf="@+id/button5"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button5"
+                    style="@style/contentsReg05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/shape_select_deactivate"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/pay_transfer"
+                    android:textColor="@color/deactive04"
+                    app:layout_constraintEnd_toStartOf="@+id/view5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view5" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button8"
-            style="@style/contentsReg05"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_select_deactivate"
-            android:gravity="center_horizontal|center_vertical"
-            android:stateListAnimator="@null"
-            android:text="@string/pay_else"
-            android:textColor="@color/deactive04"
-            app:layout_constraintBottom_toBottomOf="@+id/button7"
-            app:layout_constraintEnd_toEndOf="@+id/button6"
-            app:layout_constraintStart_toStartOf="@+id/button6"
-            app:layout_constraintTop_toTopOf="@+id/button7" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button6"
+                    style="@style/contentsReg05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/shape_select_deactivate"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/pay_money"
+                    android:textColor="@color/deactive04"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/view5"
+                    app:layout_constraintTop_toTopOf="@+id/view5" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button9"
-            style="@style/contentsReg05"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/shape_select_deactivate"
-            android:gravity="center_horizontal|center_vertical"
-            android:stateListAnimator="@null"
-            android:text="@string/pay_none"
-            android:textColor="@color/deactive04"
-            app:layout_constraintEnd_toEndOf="@+id/button7"
-            app:layout_constraintStart_toStartOf="@+id/button7"
-            app:layout_constraintTop_toBottomOf="@+id/button7" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button7"
+                    style="@style/contentsReg05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/shape_select_deactivate"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/pay_gifticon"
+                    android:textColor="@color/deactive04"
+                    app:layout_constraintEnd_toStartOf="@+id/view5"
+                    app:layout_constraintStart_toStartOf="@+id/button5"
+                    app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-        <TextView
-            android:id="@+id/textView30"
-            style="@style/titleReg03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="@string/request_fixed_pay4"
-            android:textColor="@color/placeHolder03"
-            app:layout_constraintStart_toStartOf="@+id/button9"
-            app:layout_constraintTop_toBottomOf="@+id/button9" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button8"
+                    style="@style/contentsReg05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_select_deactivate"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/pay_else"
+                    android:textColor="@color/deactive04"
+                    app:layout_constraintBottom_toBottomOf="@+id/button7"
+                    app:layout_constraintEnd_toEndOf="@+id/button6"
+                    app:layout_constraintStart_toStartOf="@+id/button6"
+                    app:layout_constraintTop_toTopOf="@+id/button7" />
 
-        <EditText
-            android:id="@+id/amount_et_pay"
-            style="@style/titleBold02"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="24dp"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView30"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView30"
-            app:layout_constraintTop_toTopOf="@+id/textView30" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button9"
+                    style="@style/contentsReg05"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/shape_select_deactivate"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="@string/pay_none"
+                    android:textColor="@color/deactive04"
+                    app:layout_constraintEnd_toEndOf="@+id/button7"
+                    app:layout_constraintStart_toStartOf="@+id/button7"
+                    app:layout_constraintTop_toBottomOf="@+id/button7" />
 
-        <View
-            android:id="@+id/view6"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginEnd="24dp"
-            android:background="@color/dividingLine05"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView30"
-            app:layout_constraintTop_toBottomOf="@+id/amount_et_pay" />
+                <TextView
+                    android:id="@+id/textView30"
+                    style="@style/titleReg03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="@string/request_fixed_pay4"
+                    android:textColor="@color/placeHolder03"
+                    app:layout_constraintStart_toStartOf="@+id/button9"
+                    app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+                <EditText
+                    android:id="@+id/amount_et_pay"
+                    style="@style/titleBold02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView30"
+                    app:layout_constraintTop_toTopOf="@+id/textView30" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@color/dividingLine05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView30"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_et_pay" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button4"
@@ -186,6 +208,7 @@
             android:text="@string/btn_confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

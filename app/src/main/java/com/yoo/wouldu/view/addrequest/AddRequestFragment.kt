@@ -51,7 +51,7 @@ class AddRequestFragment : Fragment() {
             (activity as AddRequestActivity).onBackPressed()
         })
         addViewModel.startTaskEvent.observe(viewLifecycleOwner) {
-            Log.d(TAG, it.toString())
+            KeyBoard().hideSoftKeyboard(requireContext(), binding.messageEtAdd)
             when (it.toString()) {
                 "0" -> (activity as AddRequestActivity).addFragment(AddWhatFragment())
                 "1" -> (activity as AddRequestActivity).addFragment(AddWhenFragment())
