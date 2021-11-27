@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            app:how="@{item.how}"
+            app:how_color="@{item.how}"
             app:layout_constraintBottom_toBottomOf="@+id/imageView11"
             app:layout_constraintStart_toEndOf="@+id/imageView11"
             app:layout_constraintTop_toTopOf="@+id/imageView11" />
@@ -128,6 +128,7 @@
             android:layout_height="14dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="18dp"
+            app:how_img = "@{item.how}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_main_do" />

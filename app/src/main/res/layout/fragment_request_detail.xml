@@ -65,7 +65,7 @@
                     style="@style/titleBold02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{request.how.toString()}"
+                    app:how="@{request.how}"
                     app:layout_constraintStart_toStartOf="@+id/what_tv_detail"
                     app:layout_constraintTop_toBottomOf="@+id/what_tv_detail" />
 
@@ -101,7 +101,7 @@
                         android:layout_marginTop="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{request.writer}"
+                        android:text="@{request.writerDetail}"
                         android:textColor="@color/placeHolder03"
                         app:layout_constraintStart_toStartOf="@+id/writer_tv_detail"
                         app:layout_constraintTop_toBottomOf="@+id/writer_tv_detail" />
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        android:text="@{request.due.toString()}"
+                        app:duedate="@{request.due}"
                         app:layout_constraintStart_toStartOf="@+id/imageView"
                         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -122,7 +122,7 @@
                         style="@style/contentsBold04"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{request.due.toString()}"
+                        app:duetime="@{request.due}"
                         app:layout_constraintStart_toStartOf="@+id/date_tv_detail"
                         app:layout_constraintTop_toBottomOf="@+id/date_tv_detail" />
 
@@ -183,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="@{request.pay.toString()}"
+                        app:payType="@{request.pay}"
                         app:layout_constraintStart_toEndOf="@+id/fixed4_tv_detail"
                         app:layout_constraintTop_toTopOf="@+id/fixed4_tv_detail" />
 
@@ -208,7 +208,7 @@
                         android:layout_marginEnd="20dp"
                         android:text="@{request.message}"
                         android:textColor="@color/caption02"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -255,7 +255,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="20dp"
                         android:background="@color/dividingLine05"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/fixed5_tv_detail" />

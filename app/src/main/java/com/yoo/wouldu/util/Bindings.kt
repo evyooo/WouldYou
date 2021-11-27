@@ -1,5 +1,6 @@
 package com.yoo.wouldu.util
 
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.yoo.wouldu.R
@@ -33,6 +34,27 @@ fun setHow(view: TextView, how: How) {
     view.text = str
 }
 
+@BindingAdapter("how_color")
+fun setHowColor(view: TextView, how: How) {
+    setHow(view, how)
+    val color = when (how) {
+        How.DO -> R.color.sub01
+        How.LEND -> R.color.sub02
+        How.BUY -> R.color.sub03
+    }
+    view.setTextColor(view.context.getColor(color))
+}
+
+@BindingAdapter("how_img")
+fun setHowImage(view: ImageView, how: How) {
+    val img = when (how) {
+        How.DO -> R.drawable.ic_main_do
+        How.LEND -> R.drawable.ic_main_lend
+        How.BUY -> R.drawable.ic_main_buy
+    }
+    view.setImageResource(img)
+}
+
 
 @BindingAdapter("due")
 fun setDatetime(view: TextView, dateTime: LocalDateTime) {
@@ -43,6 +65,21 @@ fun setDatetime(view: TextView, dateTime: LocalDateTime) {
         "AM ${dateTime.hour}:${dateTime.minute}"
     }
     view.text = "$date $time"
+}
+
+@BindingAdapter("duedate")
+fun setDate(view: TextView, dateTime: LocalDateTime) {
+    view.text = "${dateTime.year}년 ${dateTime.monthValue}월 ${dateTime.dayOfMonth}일"
+}
+
+@BindingAdapter("duetime")
+fun setTime(view: TextView, dateTime: LocalDateTime) {
+    val time = if (dateTime.hour > 12) {
+        "오후 ${dateTime.hour - 12}시 ${dateTime.minute}분"
+    } else {
+        "오전 ${dateTime.hour}시 ${dateTime.minute}분"
+    }
+    view.text = time
 }
 
 @BindingAdapter("payType")
