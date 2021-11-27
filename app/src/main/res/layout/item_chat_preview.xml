@@ -16,7 +16,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:onClick="@{()->viewModel.addNewTask(item.chatId)}">
 
         <TextView
             android:id="@+id/username_tv_preview"

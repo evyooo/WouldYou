@@ -15,69 +15,123 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{()->viewModel.addNewTask(item)}">
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/shape_rad10_block"
+        android:onClick="@{()->viewModel.addNewTask(item)}"
+        android:paddingBottom="14dp">
 
         <TextView
             android:id="@+id/what_tv_item_request"
+            style="@style/contentsBold04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:text="@{item.what}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="맥북 충전기 C타입"/>
+            app:layout_constraintStart_toStartOf="@+id/imageView11"
+            app:layout_constraintTop_toBottomOf="@+id/how2_tv_item_request"
+            tools:text="맥북 충전기 C타입" />
+
 
         <TextView
             android:id="@+id/where_tv_item_request"
+            style="@style/caption10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginStart="4dp"
             android:text="@{item.where}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/what_tv_item_request"
-            app:layout_constraintTop_toBottomOf="@+id/what_tv_item_request"
-            tools:text="100주년 기념관"/>
-
+            android:textColor="@color/placeHolder03"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="@+id/imageView9"
+            tools:text="100주년 기념관" />
 
         <TextView
             android:id="@+id/when_tv_item_request"
+            style="@style/caption10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="4dp"
             android:text="@{item.due.toString()}"
-            app:layout_constraintBottom_toBottomOf="@+id/where_tv_item_request"
-            app:layout_constraintStart_toEndOf="@+id/where_tv_item_request"
-            app:layout_constraintTop_toTopOf="@+id/where_tv_item_request"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="오후 3시 30분"/>
+            android:textColor="@color/placeHolder03"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            tools:text="오후 3시 30분" />
 
 
         <TextView
             android:id="@+id/pay_tv_item_request"
+            style="@style/caption10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="4dp"
             android:text="@{item.pay.toString()}"
-            app:layout_constraintBottom_toBottomOf="@+id/when_tv_item_request"
-            app:layout_constraintStart_toEndOf="@+id/when_tv_item_request"
-            app:layout_constraintTop_toTopOf="@+id/when_tv_item_request"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="계좌 이체"/>
-
+            android:textColor="@color/placeHolder03"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="@+id/imageView10"
+            tools:text="계좌 이체" />
 
         <TextView
             android:id="@+id/how_tv_item_request"
+            style="@style/contentsBold04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="6dp"
             android:text="@{item.how.toString()}"
             app:layout_constraintBottom_toBottomOf="@+id/what_tv_item_request"
             app:layout_constraintStart_toEndOf="@+id/what_tv_item_request"
             app:layout_constraintTop_toTopOf="@+id/what_tv_item_request"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="빌려주세요"/>
+            tools:text="빌려주세요" />
+
+        <TextView
+            android:id="@+id/how2_tv_item_request"
+            style="@style/subtitleBold08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@{item.how.toString()}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/what_tv_item_request"
+            app:layout_constraintTop_toBottomOf="@+id/what_tv_item_request"
+            app:srcCompat="@drawable/ic_time" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toEndOf="@+id/when_tv_item_request"
+            app:layout_constraintTop_toTopOf="@+id/imageView8"
+            app:srcCompat="@drawable/ic_marker" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@+id/where_tv_item_request"
+            app:layout_constraintTop_toTopOf="@+id/imageView9"
+            app:srcCompat="@drawable/ic_heart" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_main_do" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
