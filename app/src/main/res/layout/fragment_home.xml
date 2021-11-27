@@ -48,12 +48,12 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/ic_add_request"
             android:onClick="@{() -> viewModel.addNewTask(0)}"
-            android:text="Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -64,6 +64,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="116dp"
             android:layout_marginEnd="24dp"
+            android:background="@drawable/shape_rad20_gray"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +72,11 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/all_btn_main"
+                style="@style/subtitleBold08"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/shape_rad20_gray_left"
+                android:background="@drawable/shape_rad20_white_stroke"
                 android:onClick="@{() -> viewModel.loadAll()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_all"
@@ -82,35 +84,41 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/do_btn_main"
+                style="@style/subtitleReg09"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/shape_rad20_gray_middle"
+                android:background="@color/transparent"
                 android:onClick="@{() -> viewModel.loadDoCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_do"
+                android:textColor="@color/deactive04"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buy_btn_main"
+                style="@style/subtitleReg09"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/shape_rad20_gray_middle"
+                android:background="@color/transparent"
                 android:onClick="@{() -> viewModel.loadBuyCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_buy"
+                android:textColor="@color/deactive04"
                 android:textSize="12dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lend_btn_main"
+                style="@style/subtitleReg09"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/shape_rad20_gray_right"
+                android:background="@color/transparent"
                 android:onClick="@{() -> viewModel.loadLendCategory()}"
                 android:stateListAnimator="@null"
                 android:text="@string/category_lend"
+                android:textColor="@color/deactive04"
                 android:textSize="12dp" />
         </LinearLayout>
 
@@ -124,6 +132,47 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout">
+
+            <ImageView
+                android:id="@+id/alien1_iv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible"
+                app:srcCompat="@drawable/alien_all" />
+
+            <ImageView
+                android:id="@+id/alien2_iv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/alien_do" />
+
+            <ImageView
+                android:id="@+id/alien3_iv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/alien_buy" />
+
+            <ImageView
+                android:id="@+id/alien4_iv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/alien_lend" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
