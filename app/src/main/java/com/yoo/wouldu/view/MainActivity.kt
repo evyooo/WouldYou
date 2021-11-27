@@ -3,7 +3,6 @@ package com.yoo.wouldu.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.ActivityMainBinding
@@ -21,15 +20,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.holder_fl_main, fragment)
-        fragmentTransaction.commit()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.holder_fl_main, fragment)
+            .commit()
     }
 
     fun addFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction().add(R.id.holder_fl_main, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.holder_fl_main, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun navigationItemSelect() {

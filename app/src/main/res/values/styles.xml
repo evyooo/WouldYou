@@ -78,4 +78,10 @@
         <item name="android:textSize">10dp</item>
     </style>
 
+    <style name="button">
+        <item name="android:fontFamily">@font/applesdg_bold</item>
+        <item name="android:textColor">@color/white07</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
 </resources>
