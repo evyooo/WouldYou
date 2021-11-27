@@ -8,11 +8,16 @@ import androidx.lifecycle.Observer
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.ActivityChatBinding
 import com.yoo.wouldu.databinding.ActivityMainBinding
+import com.yoo.wouldu.model.data.request.How
+import com.yoo.wouldu.model.data.request.Pay
+import com.yoo.wouldu.model.data.request.Request
+import com.yoo.wouldu.model.data.request.Status
 import com.yoo.wouldu.viewmodel.ChatAdapter
 import com.yoo.wouldu.viewmodel.ChatViewModel
 import com.yoo.wouldu.viewmodel.PreviewAdapter
 import com.yoo.wouldu.viewmodel.RequestViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.time.LocalDateTime
 
 class ChatActivity : AppCompatActivity() {
 
@@ -31,6 +36,30 @@ class ChatActivity : AppCompatActivity() {
         binding.chatRvChat.adapter = adapter
         chatViewModel.loadChat()
 
+        val isNew = intent.getBooleanExtra("isNew", false)
+        if (isNew) {
+            val request = intent.getParcelableExtra<Request>("request")
+            chatViewModel._requestInfo.value = request
+        }
+        else {
+            // dummy
+            chatViewModel._requestInfo.value = Request(
+                "1",
+                "더미값",
+                How.BUY,
+                "경영대",
+                "dd",
+                LocalDateTime.of(2021, 3, 1, 12, 30),
+                Pay.MONEY,
+                "",
+                "",
+                "이니마니모",
+                "17학번",
+                "여자",
+                LocalDateTime.of(2021, 3, 1, 12, 0),
+                Status.ACTIVE
+            )
+        }
     }
 
     private fun setObserver() {
@@ -39,6 +68,9 @@ class ChatActivity : AppCompatActivity() {
         })
         chatViewModel.chatList.observe(this, Observer {
             adapter.loadData(it)
+        })
+        chatViewModel.requestInfo.observe(this, Observer {
+            binding.request = it
         })
     }
 }
