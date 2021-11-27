@@ -5,9 +5,11 @@
   <h2> 부탁은 우주로 보내세요 :satellite: </h2>
   <h4> < 위드 코로나 시대, 캠퍼스 내 부탁 해결 커뮤니티 > </h3>
     
-  <img src="https://img.shields.io/github/issues/evyooo/WouldYou"/>
-  <img src="https://img.shields.io/github/issues-closed/evyooo/WouldYou"/>
-  <img src="https://img.shields.io/github/commit-activity/w/evyooo/WouldYou">
-  <img src="https://img.shields.io/github/last-commit/evyooo/WouldYou">
-  <br><br>
-</div>
+<div>  
+   <img src="https://img.shields.io/badge/Android Studio-F7DF1E?logo=Android#3DDC84"/>
+   <img src="https://img.shields.io/badge/Kotlin-339933?logo=Kotlin&logoColor=#7F52FF"/>  
+   <img src="https://img.shields.io/badge/Design Pattern-MVVM-DB7093?logo=React&logoColor=white"/>  
+   <img src="https://img.shields.io/badge/DI-Koin-61A866?logo=MediaFire&logoColor=red"/>  
+   <img src="https://img.shields.io/badge/GitHub-181717?logo=GitHub&logoColor=white"/>  
+</div>  
+
