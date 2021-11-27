@@ -34,10 +34,15 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     private val _addRequestEvent = MutableLiveData<Event<How>>()
     val addRequestEvent: LiveData<Event<How>> = _addRequestEvent
 
+    private val _category = MutableLiveData<Int>()
+    val category: LiveData<Int> = _category
+
+
     fun loadAll() {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 _requestList.value = repository.dummy
+                _category.value = 0
             }
         }
     }
@@ -46,6 +51,7 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 _requestList.value = repository.dummy.filter { it.how == How.DO }
+                _category.value = 1
             }
         }
     }
@@ -54,6 +60,7 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 _requestList.value = repository.dummy.filter { it.how == How.BUY }
+                _category.value = 2
             }
         }
     }
@@ -62,6 +69,7 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 _requestList.value = repository.dummy.filter { it.how == How.LEND }
+                _category.value = 3
             }
         }
     }

@@ -48,23 +48,32 @@ class HomeFragment : Fragment() {
             adapter.loadData(it)
         })
         requestViewModel.newTaskEvent.observe(viewLifecycleOwner, EventObserver {
-//            val intent = Intent(context, RequestDetailActivity::class.java)
-//            intent.putExtra("item", it)
-//            startActivity(intent)
             (activity as MainActivity).addFragment(RequestDetailFragment(it))
         })
         requestViewModel.addRequestEvent.observe(viewLifecycleOwner, EventObserver {
-            Log.d(TAG, "add")
             val intent = Intent(context, AddRequestActivity::class.java)
             intent.putExtra("how", it)
             startActivity(intent)
         })
+        requestViewModel.category.observe(viewLifecycleOwner, Observer {
+            changeCategory(it)
+        })
     }
 
-    private fun changeCategory() {
-//        val categoryList = listOf(binding.allBtnMain, binding.doBtnMain, binding.buyBtnMain, binding.lendBtnMain)
-//        categoryList.forEach {
-//
-//        }
+    private fun changeCategory(int: Int) {
+        val categoryList = listOf(binding.allBtnMain, binding.doBtnMain, binding.buyBtnMain, binding.lendBtnMain)
+        val alienList = listOf(binding.alien1IvHome, binding.alien2IvHome, binding.alien3IvHome, binding.alien4IvHome)
+        alienList.forEach {
+            it.visibility = View.INVISIBLE
+        }
+        alienList[int].visibility = View.VISIBLE
+
+        categoryList.forEach {
+            it.setTextAppearance(R.style.subtitleReg09)
+            it.setTextColor(requireContext().getColor(R.color.deactive04))
+            it.setBackgroundColor(requireContext().getColor(R.color.transparent))
+        }
+        categoryList[int].setTextAppearance(R.style.subtitleBold08)
+        categoryList[int].setBackgroundResource(R.drawable.shape_rad20_white_stroke)
     }
 }
