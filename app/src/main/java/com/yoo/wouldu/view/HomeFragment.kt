@@ -54,9 +54,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun changeCategory() {
-        val categoryList = listOf(binding.allBtnMain, binding.doBtnMain, binding.buyBtnMain, binding.lendBtnMain)
-        categoryList.forEach {
-
-        }
+//        val categoryList = listOf(binding.allBtnMain, binding.doBtnMain, binding.buyBtnMain, binding.lendBtnMain)
+//        categoryList.forEach {
+//
+//        }
     }
 }

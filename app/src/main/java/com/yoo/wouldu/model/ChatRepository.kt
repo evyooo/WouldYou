@@ -22,10 +22,10 @@ class ChatRepository {
 
     val dummyWhole =
         listOf(
-            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "이니마니모", null),
-            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "이니마니모", null),
-            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "이니마니모", null),
-            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "이니마니모", null),
-            Chat("", LocalDateTime.of(2021, 11, 2, 16, 31), false, "이니마니모", null)
+            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "하이하이루", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 14, 56), false, "하이하이루", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "하이하이루", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 15, 0), true, "하이하이루", null),
+            Chat("", LocalDateTime.of(2021, 11, 2, 16, 31), false, "하이하이루", null)
         )
 }
