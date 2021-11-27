@@ -21,6 +21,7 @@
         android:layout_marginBottom="4dp"
         android:background="@drawable/shape_rad10_block"
         android:onClick="@{()->viewModel.addNewTask(item)}"
+        android:paddingLeft="20dp"
         android:paddingBottom="14dp">
 
         <TextView
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{item.what}"
-            app:layout_constraintStart_toStartOf="@+id/imageView11"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/how2_tv_item_request"
             tools:text="맥북 충전기 C타입" />
 
@@ -52,8 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            app:due="@{item.due}"
             android:textColor="@color/placeHolder03"
+            app:due="@{item.due}"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintTop_toTopOf="@+id/imageView8"
             tools:text="오후 3시 30분" />
@@ -64,10 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            app:payType="@{item.pay}"
             android:textColor="@color/placeHolder03"
             app:layout_constraintStart_toEndOf="@+id/imageView10"
             app:layout_constraintTop_toTopOf="@+id/imageView10"
+            app:payType="@{item.pay}"
             tools:text="계좌 이체" />
 
         <TextView
@@ -88,18 +89,18 @@
             style="@style/subtitleBold08"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            app:how_color="@{item.how}"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            android:layout_marginTop="18dp"
+            app:how="@{item.how}"
             app:layout_constraintStart_toEndOf="@+id/imageView11"
-            app:layout_constraintTop_toTopOf="@+id/imageView11" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:status="@{item.status}" />
 
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/what_tv_item_request"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/what_tv_item_request"
             app:srcCompat="@drawable/ic_time" />
 
@@ -124,14 +125,15 @@
 
         <ImageView
             android:id="@+id/imageView11"
-            android:layout_width="14dp"
+            android:layout_width="18dp"
             android:layout_height="14dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="18dp"
-            app:how_img = "@{item.how}"
+            android:paddingRight="4dp"
+            app:how="@{item.how}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_main_do" />
+            app:srcCompat="@drawable/ic_main_do"
+            app:status="@{item.status}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
