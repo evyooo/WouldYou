@@ -66,14 +66,17 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
         }
     }
 
+    // 요청 상세페이지로
     fun addNewTask(request: Request) {
         _newTaskEvent.value = Event(request)
     }
 
+    // 닫기
     fun addNewTask() {
         _closeTaskEvent.postValue(Event(Unit))
     }
 
+    // 요청 생성
     fun addNewTask(int: Int) {
         Log.d(TAG, "add")
         when (int) {
