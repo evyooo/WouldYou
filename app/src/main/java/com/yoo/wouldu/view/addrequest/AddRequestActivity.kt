@@ -16,17 +16,18 @@ class AddRequestActivity : AppCompatActivity() {
         binding = ActivityAddRequestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        init()
+    }
+
+    fun init() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.holder_fl_add, AddRequestFragment())
             .commit()
     }
-
 
     fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction().add(R.id.holder_fl_add, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
-
-
 }

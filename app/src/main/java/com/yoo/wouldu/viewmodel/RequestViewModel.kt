@@ -28,11 +28,8 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
     val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
-    private val _startChatEvent = MutableLiveData<Event<Int>>()
-    val startChatEvent: LiveData<Event<Int>> = _startChatEvent
-
-    private val _addRequestEvent = MutableLiveData<Event<How>>()
-    val addRequestEvent: LiveData<Event<How>> = _addRequestEvent
+    private val _addRequestEvent = MutableLiveData<Event<Unit>>()
+    val addRequestEvent: LiveData<Event<Unit>> = _addRequestEvent
 
     private val _category = MutableLiveData<Int>()
     val category: LiveData<Int> = _category
@@ -85,13 +82,8 @@ class RequestViewModel(private val repository: RequestRepository) : ViewModel() 
     }
 
     // 요청 생성
-    fun addNewTask(int: Int) {
-        Log.d(TAG, "add")
-        when (int) {
-            0 -> _addRequestEvent.postValue(Event(How.DO))
-            1 -> _addRequestEvent.postValue(Event(How.BUY))
-            2 -> _addRequestEvent.postValue(Event(How.LEND))
-        }
+    fun startTask() {
+        _addRequestEvent.postValue(Event(Unit))
     }
 
 }

@@ -25,7 +25,9 @@
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.3565737051792829" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3173758865248227" />
         <entry key="app/src/main/res/layout/activity_request_detail.xml" value="0.27943840579710144" />
+        <entry key="app/src/main/res/layout/activity_select.xml" value="0.4926753746581537" />
         <entry key="app/src/main/res/layout/custom_category.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/dialog_selectrequest.xml" value="0.5792646054868344" />
         <entry key="app/src/main/res/layout/fragment_add_pay.xml" value="0.4519744873046875" />
         <entry key="app/src/main/res/layout/fragment_add_request.xml" value="0.4144943237304688" />
         <entry key="app/src/main/res/layout/fragment_add_what.xml" value="0.36826934814453127" />
@@ -37,7 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_request_detail.xml" value="0.41044234952864395" />
         <entry key="app/src/main/res/layout/item_chat.xml" value="0.625" />
         <entry key="app/src/main/res/layout/item_chat_preview.xml" value="0.444570516259716" />
-        <entry key="app/src/main/res/layout/item_request.xml" value="1.8785628557690779" />
+        <entry key="app/src/main/res/layout/item_request.xml" value="1.1219090779622396" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1" />
       </map>
     </option>
