@@ -11,9 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WouldU">
         <activity
+            android:name=".view.ReviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.SelectActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".view.addrequest.AddRequestActivity"
             android:exported="true" />

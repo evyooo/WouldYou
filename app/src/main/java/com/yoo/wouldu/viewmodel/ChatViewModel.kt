@@ -30,6 +30,9 @@ class ChatViewModel(private val repository: ChatRepository): ViewModel() {
     private val _newTaskEvent = MutableLiveData<Event<String>>()
     val newTaskEvent: LiveData<Event<String>> = _newTaskEvent
 
+    private val _reviewEvent = MutableLiveData<Event<String>>()
+    val reviewEvent: LiveData<Event<String>> = _reviewEvent
+
     private val _closeTaskEvent = MutableLiveData<Event<Unit>>()
     val closeTaskEvent: LiveData<Event<Unit>> = _closeTaskEvent
 
@@ -55,5 +58,9 @@ class ChatViewModel(private val repository: ChatRepository): ViewModel() {
 
     fun addNewTask() {
         _closeTaskEvent.postValue(Event(Unit))
+    }
+
+    fun reviewTask(username: String) {
+        _reviewEvent.value = Event(username)
     }
 }

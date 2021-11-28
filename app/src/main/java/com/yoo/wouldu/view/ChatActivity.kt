@@ -1,5 +1,6 @@
 package com.yoo.wouldu.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -72,6 +73,10 @@ class ChatActivity : AppCompatActivity() {
         })
         chatViewModel.requestInfo.observe(this, Observer {
             binding.request = it
+        })
+        chatViewModel.reviewEvent.observe(this, Observer {
+            val intent = Intent(this, ReviewActivity::class.java)
+            startActivity(intent)
         })
     }
 }
