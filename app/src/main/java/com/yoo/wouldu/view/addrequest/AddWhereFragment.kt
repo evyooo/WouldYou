@@ -12,6 +12,7 @@ import com.yoo.wouldu.databinding.FragmentAddWhenBinding
 import com.yoo.wouldu.databinding.FragmentAddWhereBinding
 import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.viewmodel.AddViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -19,7 +20,7 @@ class AddWhereFragment : Fragment() {
     private val TAG = "AddWhereFragment"
 
     private lateinit var binding: FragmentAddWhereBinding
-    private val addViewModel: AddViewModel by viewModel()
+    val addViewModel: AddViewModel by sharedViewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +43,10 @@ class AddWhereFragment : Fragment() {
         })
         addViewModel.keyboardDownEvent.observe(viewLifecycleOwner, Observer {
             KeyBoard().hideSoftKeyboard(requireContext(), binding.detailEtWhere)
+        })
+        addViewModel.whatDone.observe(viewLifecycleOwner, Observer { done ->
+            if (done) binding.button4.setBackgroundResource(R.drawable.shape_btn_activate)
+            else binding.button4.setBackgroundResource(R.drawable.shape_btn_deactivate)
         })
     }
 

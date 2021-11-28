@@ -67,6 +67,7 @@
             android:background="@drawable/shape_btn_deactivate"
             android:stateListAnimator="@null"
             android:text="@string/btn_confirm"
+            android:onClick="@{() -> viewModel.closeNewTask()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

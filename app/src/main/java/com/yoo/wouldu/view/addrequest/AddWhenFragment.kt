@@ -31,12 +31,30 @@ class AddWhenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setObserver()
         binding.viewModel = addViewModel
-
+        setSpinner()
     }
 
     private fun setObserver() {
         addViewModel.closeTaskEvent.observe(viewLifecycleOwner, Observer {
             (activity as AddRequestActivity).onBackPressed()
         })
+    }
+
+    private fun setSpinner() {
+        binding.spinnerYear.minValue = 2021
+        binding.spinnerYear.maxValue = 2022
+        binding.spinnerMonth.minValue = 1
+        binding.spinnerMonth.maxValue = 12
+        binding.spinnerDay.minValue = 1
+        binding.spinnerDay.maxValue = 31
+
+        binding.spinnerAmpm.minValue = 0
+        binding.spinnerAmpm.maxValue = 1
+        binding.spinnerAmpm.displayedValues = arrayOf("오전", "오후")
+        binding.spinnerHour.minValue = 1
+        binding.spinnerHour.maxValue = 12
+        binding.spinnerMinute.minValue = 0
+        binding.spinnerMinute.maxValue = 5
+        binding.spinnerMinute.displayedValues = arrayOf("00", "10", "20", "30", "40", "50")
     }
 }

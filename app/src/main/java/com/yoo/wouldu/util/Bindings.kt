@@ -173,3 +173,12 @@ fun setWrittenTime(view: TextView, writtenTime: LocalDateTime) {
         view.text = "${writtenTime.year}-${writtenTime.monthValue}-${writtenTime.dayOfMonth}"
     }
 }
+
+@BindingAdapter("spinner_year", "spinner_month", "spinner_day")
+fun setSpinnerDate(view: TextView, spinner_year: String, spinner_month: String, spinner_day: String) {
+    view.text = "${spinner_year}년 ${spinner_month}월 ${spinner_day}일"
+}
+
+
+
+

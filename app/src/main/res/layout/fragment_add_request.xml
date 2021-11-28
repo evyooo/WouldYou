@@ -5,9 +5,9 @@
     tools:context=".view.addrequest.AddRequestFragment">
 
     <data>
-        <variable
-            name="viewModel"
-            type="com.yoo.wouldu.viewmodel.AddViewModel" />
+        <variable name="viewModel" type="com.yoo.wouldu.viewmodel.AddViewModel" />
+        <variable name="how" type="com.yoo.wouldu.model.data.request.How" />
+        <variable name="what" type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="TextView" />
+                    app:how="@{how}"
+                    />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/what_cl_add"
@@ -61,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:text="@{viewModel.what}"
+                        android:text="@{what}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -129,9 +130,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:text="@string/request_where"
+                        android:text="@{viewModel.whereDetail}"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                        app:layout_constraintTop_toBottomOf="@+id/where_tv_add" />
 
                     <TextView
                         android:id="@+id/where_tv_chat"
@@ -153,13 +154,13 @@
                         app:layout_constraintTop_toBottomOf="@+id/when_tv_chat" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/where_tv_add"
                         style="@style/titleBold02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:text="TextView"
-                        android:visibility="gone"
+                        android:text="@{viewModel.where}"
+                        android:visibility="visible"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -208,7 +209,8 @@
                         style="@style/titleBold02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/request_pay"
+                        android:paddingRight="4dp"
+                        android:text="@{viewModel.payAmount}"
                         app:layout_constraintStart_toStartOf="@+id/textView12"
                         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 

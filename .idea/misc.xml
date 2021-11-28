@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/shape_rad16_stroke.xml" value="0.2595" />
         <entry key="app/src/main/res/drawable-v24/shape_rad20_gray.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable-v24/shape_rad20_gray_middle.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shape_btn_activate.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/shape_btn_gradation.xml" value="0.2595" />
         <entry key="app/src/main/res/drawable/shape_chat1_gray.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/shape_chat2_gray.xml" value="0.1315" />
@@ -37,7 +38,7 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.56849365234375" />
         <entry key="app/src/main/res/layout/fragment_my.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_request_detail.xml" value="0.41044234952864395" />
-        <entry key="app/src/main/res/layout/item_chat.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/item_chat.xml" value="0.275341796875" />
         <entry key="app/src/main/res/layout/item_chat_preview.xml" value="0.444570516259716" />
         <entry key="app/src/main/res/layout/item_request.xml" value="1.1219090779622396" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1" />

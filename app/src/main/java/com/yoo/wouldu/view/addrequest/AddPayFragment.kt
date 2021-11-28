@@ -12,13 +12,14 @@ import com.yoo.wouldu.databinding.FragmentAddPayBinding
 import com.yoo.wouldu.databinding.FragmentAddWhenBinding
 import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.viewmodel.AddViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddPayFragment : Fragment() {
     private val TAG = "AddPayFragment"
 
     private lateinit var binding: FragmentAddPayBinding
-    private val addViewModel: AddViewModel by viewModel()
+    val addViewModel: AddViewModel by sharedViewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -38,6 +38,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <NumberPicker
+            android:id="@+id/spinner_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_month"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <NumberPicker
+            android:id="@+id/spinner_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <NumberPicker
+            android:id="@+id/spinner_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintStart_toEndOf="@+id/spinner_month"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
         <TextView
             android:id="@+id/textView21"
             style="@style/titleBold02"
@@ -48,6 +73,31 @@
             app:layout_constraintStart_toStartOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
+        <NumberPicker
+            android:id="@+id/spinner_ampm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_month"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <NumberPicker
+            android:id="@+id/spinner_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <NumberPicker
+            android:id="@+id/spinner_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/Spinner"
+            app:layout_constraintStart_toEndOf="@+id/spinner_hour"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/confirm_btn_when"
             style="@style/button"
@@ -55,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="36dp"
-            android:background="@drawable/shape_btn_deactivate"
+            android:background="@drawable/shape_btn_activate"
             android:stateListAnimator="@null"
             android:text="@string/btn_confirm"
             app:layout_constraintBottom_toBottomOf="parent"

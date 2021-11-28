@@ -1,16 +1,19 @@
 package com.yoo.wouldu.view.addrequest
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.yoo.wouldu.R
 import com.yoo.wouldu.databinding.FragmentAddRequestBinding
 import com.yoo.wouldu.util.KeyBoard
 import com.yoo.wouldu.viewmodel.AddViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -19,7 +22,7 @@ class AddRequestFragment : Fragment() {
     private val TAG = "AddRequestFragment"
 
     private lateinit var binding: FragmentAddRequestBinding
-    private val addViewModel: AddViewModel by viewModel()
+    val addViewModel: AddViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,9 +35,10 @@ class AddRequestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        addViewModel.loadAll()
         setObserver()
+
         binding.viewModel = addViewModel
+        binding.how = addViewModel.how.value
     }
 
     private fun setObserver() {
@@ -52,6 +56,9 @@ class AddRequestFragment : Fragment() {
         }
         addViewModel.keyboardDownEvent.observe(viewLifecycleOwner, Observer {
             KeyBoard().hideSoftKeyboard(requireContext(), binding.messageEtAdd)
+        })
+        addViewModel.what.observe(viewLifecycleOwner, Observer {
+            binding.what = addViewModel.what.value
         })
     }
 }

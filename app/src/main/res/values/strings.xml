@@ -47,7 +47,7 @@
 
     <string name="hint_add_message">입력해주세요</string>
     <string name="hint_what">무엇을(를)</string>
-    <string name="hint_where">건물을 선택해주세요</string>
+    <string name="hint_where">건물을 입력해주세요</string>
     <string name="hint_where_detail">위치에 대한 추가 정보를 입력해주세요</string>
 
 
