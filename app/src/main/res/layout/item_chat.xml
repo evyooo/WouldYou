@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:isRight_direction="@{item.isRight}"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
@@ -32,20 +33,9 @@
             android:paddingBottom="10dp"
             android:text="@{item.message}"
             android:textColor="@color/white07"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:isRight="@{item.isRight}"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView10"
-            style="@style/caption10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="4dp"
-            android:text="@{item.dateTime.toString()}"
-            android:textColor="@color/deactive04"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView11"
@@ -53,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="4dp"
+            app:isRight_time="@{item.isRight}"
             android:text="@{item.dateTime.toString()}"
             android:textColor="@color/deactive04"
             app:layout_constraintBottom_toBottomOf="parent"

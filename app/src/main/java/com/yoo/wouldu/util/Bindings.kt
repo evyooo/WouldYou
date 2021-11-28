@@ -3,6 +3,7 @@ package com.yoo.wouldu.util
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.yoo.wouldu.R
 import com.yoo.wouldu.model.data.request.How
@@ -177,6 +178,34 @@ fun setWrittenTime(view: TextView, writtenTime: LocalDateTime) {
 @BindingAdapter("spinner_year", "spinner_month", "spinner_day")
 fun setSpinnerDate(view: TextView, spinner_year: String, spinner_month: String, spinner_day: String) {
     view.text = "${spinner_year}년 ${spinner_month}월 ${spinner_day}일"
+}
+
+@BindingAdapter("isRight")
+fun setBubble(view: TextView, isRight: Boolean){
+    if (isRight) {
+        view.setBackgroundResource(R.drawable.shape_chat2_gray)
+        view.setTextColor(view.context.getColor(R.color.black01))
+        view.scaleX = -1f
+    }
+    else{
+        view.setBackgroundResource(R.drawable.shape_chat2_purple)
+        view.setTextColor(view.context.getColor(R.color.white07))
+    }
+}
+
+@BindingAdapter("isRight_time")
+fun setTimeChat(view: TextView, isRight: Boolean){
+    if (isRight) {
+        view.scaleX = -1f
+    }
+}
+
+
+@BindingAdapter("isRight_direction")
+fun setDirection(view: ConstraintLayout, isRight: Boolean){
+    if (isRight) {
+        view.scaleX = -1f
+    }
 }
 
 

@@ -41,10 +41,10 @@ class ChatViewModel(private val repository: ChatRepository): ViewModel() {
         }
     }
 
-    fun loadChat() {
+    fun loadChat(cid: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
-                _chatList.value = repository.dummyWhole
+                _chatList.value = repository.dummyList[cid]
             }
         }
     }

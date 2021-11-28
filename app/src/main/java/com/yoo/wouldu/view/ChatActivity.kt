@@ -34,7 +34,6 @@ class ChatActivity : AppCompatActivity() {
 
         adapter = ChatAdapter(chatViewModel)
         binding.chatRvChat.adapter = adapter
-        chatViewModel.loadChat()
 
         val isNew = intent.getBooleanExtra("isNew", false)
         if (isNew) {
@@ -42,23 +41,25 @@ class ChatActivity : AppCompatActivity() {
             chatViewModel._requestInfo.value = request
         }
         else {
+            val cid = intent.getStringExtra("cid")
             // dummy
             chatViewModel._requestInfo.value = Request(
                 "1",
-                "더미값",
+                "공차 초코 밀크티 사다주세요",
                 How.BUY,
                 "경영대",
                 "dd",
                 LocalDateTime.of(2021, 3, 1, 12, 30),
                 Pay.MONEY,
+                "7000원",
                 "",
-                "",
-                "이니마니모",
+                "햄찌",
                 "17학번",
                 "여자",
                 LocalDateTime.of(2021, 3, 1, 12, 0),
                 Status.ACTIVE
             )
+            chatViewModel.loadChat(cid!!.toInt())
         }
     }
 
